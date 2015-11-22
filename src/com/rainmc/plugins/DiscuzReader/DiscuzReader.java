@@ -3,35 +3,29 @@ package com.rainmc.plugins.DiscuzReader;
 import com.mysql.jdbc.Connection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import java.util.logging.Logger;
 
 /**
- * Created by Rex on 2015/11/22.
+ * DiscuzReader
+ * Created by Trexguo on 2015/11/22.
+ * Updated on 2015/11/22
  */
 public class DiscuzReader extends JavaPlugin{
 
     private final FileConfiguration config = getConfig();
 
-    private Logger logger;
+    private Broadcaster mBroadcaster;
+    private Gatherer mGatherer;
 
-    //DataBase vars.
-    private String username="YOUR DB USERNAME"; //Enter in your db username
-    private String password="YOUR DB PASSWORD"; //Enter your password for the db
-    private String url = "jdbc:mysql://db4free.net:3306/DataBaseName"; //Enter URL w/db name
-
-    //Connection vars
-    static Connection connection; //This is the variable we will use to connect to database
-
+    private Logger logger = getLogger();
 
     public DiscuzReader(){
-
+        Broadcaster mBroadcaster = new Broadcaster();
     }
 
     private boolean loadConfig(){
-        username = config.getString("username");
-        password = config.getString("password");
-        url = config.getString("url");
+
+        Gatherer mGatherer = new Gatherer(config.getString("userid"), config.getString("password"), config.getString("hostname"), config.getInt("port"), config.getString("database"));
 
         return true;
     }
@@ -39,19 +33,25 @@ public class DiscuzReader extends JavaPlugin{
     public void saveConfig(){
         config.options().copyDefaults(true);
         saveConfig();
+
+        mGatherer.startConnection();
     }
 
     @Override
     public void onEnable() {
 
 
-        config.addDefault("youAreAwesome", true);
+        loadConfig();
+
+
 
     }
 
     @Override
     public void onDisable() {
 
+
+        mGatherer.closeConnection();
     }
 
 

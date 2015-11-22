@@ -3,14 +3,12 @@
 
 # ******* MySQL Settings Start *******
 
-#
-username: YOUR_DATABASE_USERNAME
-
-#
-password: YOUR_DATABASE_PASSWORD
-
-#
-url: YOUR_DATABASE_URL
+hostname: 128.199.166.59
+port: 3306
+database: bbs
+userid: bbs
+password: 19921002!Guoxian
+prefix: ""
 
 
 # ******* Basic Settings *******
