@@ -3,7 +3,8 @@
     <output-path>$PROJECT_DIR$/out/artifacts/DiscuzReader_jar</output-path>
     <root id="archive" name="DiscuzReader.jar">
       <element id="module-output" name="DiscuzReader" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/res/spigot-api-1.8.8-R0.1-20151018.084514-27.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/spigot-api-1.8.8-R0.1-20151018.084514-27.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/mysql-connector-java-5.0.8-bin.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

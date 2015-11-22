@@ -1,0 +1,5 @@
+log.info("Hello World from log.info()");
+getLogger().info("Hello World from getLogger().info()");
+System.out.println("Hello World from System.out.println()");
+ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
+console.sendMessage("Hello World from console.sendMessage()");
