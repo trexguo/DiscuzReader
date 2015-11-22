@@ -1,0 +1,30 @@
+name: DiscuzReader
+version: 0.1
+description: Read threads from Discuz forums and display them in server
+website: http://dev.bukkit.org/bukkit-plugins/DiscuzReader/
+authors:
+    - Trexguo
+main: com.rainmc.plugins.DiscuzReader
+commands:
+    dr:
+        description: Various commands for Chairs.
+        usage: |
+          /<command> reload - reloads the configuration
+          /<command> off  - disable DiscuzReader for self
+          /<command> on - enable DiscuzReader for self
+permissions:
+    dr.*:
+    description: Gives access to all Chairs commands
+        children:
+            dr.on: true
+            dr.off: true
+            dr.reload: true
+    dr.on:
+        description: Allows you to enable DiscuzReader
+        default: true
+    dr.off:
+        description: Allows you to disable DiscuzReader
+        default: true
+    dr.reload:
+        description: Allows you to reload DiscuzReader Configuration
+        default: op

@@ -1,0 +1,21 @@
+# DiscuzReader v0.1 by Trexguo
+# Thanks for downloading this plugin!
+
+# ******* MySQL Settings Start *******
+
+#
+username: YOUR_DATABASE_USERNAME
+
+#
+password: YOUR_DATABASE_PASSWORD
+
+#
+url: YOUR_DATABASE_URL
+
+
+# ******* Basic Settings *******
+# in second
+broadcast-internal: 5
+
+# Read the latest items
+broadcast-items: 3
